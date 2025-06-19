@@ -4,7 +4,7 @@ This project focuses on building time series models to forecast item-level sales
 ## Objective
 The primary goal is to predict future sales of items sold in different store locations using historical sales data. Reliable forecasts support better decision-making for stock, logistics, and business planning.
 
-## �� Dataset
+## Dataset
 Source: Kaggle Competition - [Corporación Favorita Grocery Sales Forecasting](https://www.kaggle.com/competitions/favorita-grocery-sales-forecasting/data)
 
 There are several options provided to download the files, the simplest option is to download the files, extract them and place the in the data directory of the project. I chose this option.
