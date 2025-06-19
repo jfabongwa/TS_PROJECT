@@ -1,0 +1,125 @@
+# Corporación Favorita Grocery Sales Forecasting
+This project focuses on building time series models to forecast item-level sales for Corporación Favorita grocery stores across Ecuador. Accurate sales forecasting helps optimize inventory management, prevent stockouts, and enhance promotional strategies.
+
+## Objective
+The primary goal is to predict future sales of items sold in different store locations using historical sales data. Reliable forecasts support better decision-making for stock, logistics, and business planning.
+
+## �� Dataset
+Source: Kaggle Competition - [Corporación Favorita Grocery Sales Forecasting](https://www.kaggle.com/competitions/favorita-grocery-sales-forecasting/data)
+
+There are several options provided to download the files, the simplest option is to download the files, extract them and place the in the data directory of the project. I chose this option.
+
+ Download the file from this [link]([https://drive.google.com/file/d/1-OZfY3-VOYt44nThkkuhO5z_QbXs1e4e/view?usp=sharing)] and place the downloaded file into a folder named 
+
+ data/
+│   └─ downloaded files (holiday_events.csv, items_csv, oil.csv, stores.csv,train.csv, transactions.csv)
+
+The dataset includes:
+| Dataset | Description    |
+| :-------- | :------- |
+| train.csv:| Daily item-level sales (unit_sales) per store. Includes onpromotion. Only non-zero sales are recorded. Negative values indicate returns.|
+| stores.csv:| city, state, type, and cluster.|
+| items.csv: | Item metadata – family, class, and perishable. Perishable items have a score weight of 1.25; others, 1.0.|
+| transactions.csv:| Number of transactions per store/date (training period only).|
+| oil.csv: | Daily oil prices. Important due to Ecuador's oil-driven economy.|
+| holidays_events.csv: | National/local holidays and special events, including transferred, bridge, workday, and additional holiday types.|
+
+## Documents Directory
+|This directory contains my Report and my Video Presentaion|
+
+## Project Structure
+
+Project Structure
+This project is broken down into several stages for clarity and modular analysis:
+
+| Notebook | Description    |
+| :-------- | :------- |
+| time_series_project_data_preparation_eda_guayas.ipynb | Focused on filtering train data for Guayas region and top 3 item families and randomly sampling 2000000 rows feature engineering|
+| time_series_project_guayas_eda.ipynb | Exploratory Data Analysis (EDA): trends, seasonality, outliers, and missing values|
+| time_series_project_naive_arima.ipynb | Training a base model to have an impression of what to expect from other more robust models and trying out SARIMAX|
+| time_series_project_xgboost.ipynb | Training an XGBoost model which is more robust than just the classical models|
+
+| The app directory contains configuration files and the main entry point from the streamlit app
+| The data directory contains only proceesed data created during data preparation, which was used used for model training and testing|
+
+
+## �� Key Techniques Used
+* Time-based train-test split
+
+* Differing for stationarity
+
+* Feature scaling (StandardScaler)
+
+* Lag and rolling window feature engineering
+
+* Exogenous variable selection via correlation analysis
+
+
+## Forecasting Models
+SARIMAX: Seasonal AutoRegressive Integrated Moving Average with exogenous variables
+
+XGBoost: Machine learning model with custom time features
+
+## ��  Evaluation Metrics
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+* R² Score
+
+## Getting Started
+
+### Running the Script
+To run the Python script follow these steps:
+### Step 1: Clone the GitHub Repository 
+* Clone the repository to your local machine using Git.
+* Open command prompt and run the following command:
+```bash
+git clone https://github.com/jfabongwa/TS_PROJECT.git
+```
+### Step 2: Navigate to the Cloned Directory 
+```bash
+cd TS_PROJECT
+```
+Clone this repo:
+
+pip install -r requirements.txt
+
+## Note: Notebooks/time_series_data_preparation.ipynb must be ran first
+
+
+### Step 3: Set Up a Virtual Environment (Optional)
+* Creating a venv with conda and activating it
+```bash
+conda create -n ts-mlflow python==3.10
+conda activate ts-mlflow
+```
+### Step 4: Install dependencies
+ Installing the packages listed in *'requirements.txt'** file
+```bash
+pip install -r requirements.txt
+```
+
+## �� Requirements
+* Python 3.10+
+* pandas, numpy, matplotlib, seaborn
+* statsmodels, scikit-learn
+* xgboost
+
+## ✨ Future Work
+* Add LSTM/DeepAR models
+* Deploy model via Flask
+
+## The streamlit app can be started from the project directory as such
+````
+bash
+streamlit run app/main.py
+
+````
+This will automatically open the app in the browser.
+
+## MLFLOW
+* Use the shell script to start the MFLOW server locally
+* run 'python mlflow_run.py' on the shell
+* open the link 'http://127.0.0.1:5000' on the browser.
+
+## Acknowledgments
+Dataset from Kaggle: Corporación Favorita Grocery Sales Forecasting

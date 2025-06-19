@@ -1,0 +1,23 @@
+streamlit
+xgboost
+scikit-learn
+pandas
+numpy
+matplotlib
+joblib
+seaborn
+jupyterlab
+ipython
+plotly
+statsmodel
+os
+sys
+pickle
+logging
+mlflow
+statsmodel
+pandas
+os
+
+python Version 3.10
+

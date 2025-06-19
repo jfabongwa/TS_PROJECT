@@ -1,0 +1,19 @@
+name: ts-mlflow
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - pandas
+      - numpy
+      - scikit-learn
+      - xgboost
+      - mlflow
+      - streamlit
+      - matplotlib
+      - jupyter
+      - statsmodels
+      - itertools
+      - warnings
