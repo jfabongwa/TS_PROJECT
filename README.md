@@ -45,7 +45,6 @@ This project is broken down into several stages for clarity and modular analysis
 | The app directory contains configuration files and the main entry point from the streamlit app
 | The data directory contains only proceesed data created during data preparation, which was used used for model training and testing|
 
-
 ## �� Key Techniques Used
 * Time-based train-test split
 
